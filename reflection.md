@@ -4,19 +4,45 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 
 ## 1. What was broken when you started?
 
+- Says go lower at 0 
+- Says go lower and go higher in the same guess 
+- Doing negative number when it says guess between 0-100
+- The new game button stopped working once I switched to hard mood 
+- The range only changes on the side not on the frontend 
+- Allows number out of range as guesses and says go higher
+
+
 - What did the game look like the first time you ran it?
 - List at least two concrete bugs you noticed at the start  
   (for example: "the hints were backwards").
+- The reset game button stopped working. 
+- also, the secret answer is easily accesible by users.
 
 **Bug Reproduction Log**
 
 Document at least 3 bugs you found. Add rows as needed.
 
 | Input | Expected Behavior | Actual Behavior | Console Output / Error |
-|-------|-------------------|-----------------|------------------------|
-| | | | |
-| | | | |
-| | | | |
+Input Used
+Expected Behavior 
+Actual Behavior
+Console Error/Output
+New Game
+New Game
+Nothing 
+none
+
+0 
+Higher 
+Lower
+none
+
+Hard
+1-50
+1-100
+none
+
+
 
 ---
 

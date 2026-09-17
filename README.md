@@ -25,19 +25,19 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+- The game is a Streamlit-based number guessing game where the player selects a difficulty, enters guesses, receives Higher/Lower hints, and earns points for correct guesses.
+- During testing, I found several bugs. The difficulty ranges were incorrect, the Higher/Lower hints were backwards, and guesses outside the allowed range could be accepted. I also found a game-state issue involving starting a new game after the previous game ended. The Developer Debug Info also exposed the secret number, which is useful for debugging but not for making the user experience actually a challenge.
+- I fixed the game by correcting the difficulty ranges, validating guesses against the selected range, correcting the Higher/Lower messages, and making sure the game state resets correctly when starting a new game. I also refactored the core game functions into logic_utils.py and updated app.py to import and use those functions.
 
 ## 📸 Demo Walkthrough
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1. Open the Streamlit app and select a difficulty. The sidebar displays the correct range and number of attempts available.
+2. Enter an invalid guess such as a number below the minimum or above the maximum. The game rejects the guess and displays an out-of-range message.
+3. Enter a valid guess. If the guess is higher than the secret number, the game displays "Go LOWER!". If it is lower, the game displays "Go HIGHER!".
+4. Continue making guesses until the secret number is found or the attempt limit is reached. The game displays the appropriate result without crashing.
+5. Click New Game after finishing a game. The attempts, score, history, and game status reset so a new game can be played.
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
 
@@ -47,7 +47,13 @@ Describe your fixed game in numbered steps so a reader can follow along without 
 # Paste your pytest output here, e.g.:
 # pytest tests/
 # ========================= X passed in 0.XXs =========================
-```
+$ pytest
+============================= test session starts =============================
+collected 5 items
+
+tests/test_game_logic.py .....                                             [100%]
+
+============================== 5 passed in 0.03s ==============================
 
 ## 🚀 Stretch Features
 
